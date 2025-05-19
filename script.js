@@ -1,5 +1,14 @@
 function minDate(dates) {
   //write you code here
+	let min = new Date(dates[0]);
+	for ( let i = 0 ; i < dates.length ; i ++ ){
+		let currentDate = new Date(dates[i]);
+
+		 if (currentDate < min) {
+            min = currentDate;
+        }
+	}
+	return min.toISOString().split('T')[0].replace(/-/g, '/');
 }
 
 // Do not change the code
